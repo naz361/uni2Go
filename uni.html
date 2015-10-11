@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Mobile page</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="themes/theme.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+body {
+ background:#fff font-size:13px;
+}
+#wrap {
+	position: relative;
+	width: 220px;
+	margin: 50px auto 0;
+}
+#header {
+	position: relative;
+	line-height: 1em;
+}
+.filterform {
+	width: 220px;
+	font-size: 12px;
+	display: block;
+}
+.filterform input {
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+</style>
+<script>
+(function ($) {
+  // custom css expression for a case-insensitive contains()
+  jQuery.expr[':'].Contains = function(a,i,m){
+      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+  };
+
+
+  function listFilter(header, list) { // header is any element, list is an unordered list
+    // create and add the filter form to the header
+    var form = $("<form>").attr({"class":"filterform","action":"#"}),
+        input = $("<input>").attr({"class":"filterinput","type":"text"});
+    $(form).append(input).appendTo(header);
+
+    $(input)
+      .change( function () {
+        var filter = $(this).val();
+        if(filter) {
+          // this finds all links in a list that contain the input,
+          // and hide the ones not containing the input while showing the ones that do
+          $(list).find("a:not(:Contains(" + filter + "))").parent().slideUp();
+          $(list).find("a:Contains(" + filter + ")").parent().slideDown();
+        } else {
+          $(list).find("li").slideDown();
+        }
+        return false;
+      })
+    .keyup( function () {
+        // fire the above change event after every letter
+        $(this).change();
+    });
+  }
+
+  //ondomready
+  $(function () {
+    listFilter($("#header"), $("#list"));
+  });
+}(jQuery));
+</script>
+</head>
+
+<body>
+<div data-role="page" id="index" data-theme="e">
+  <div data-role="header">
+    <h1>Uni2Go</h1>
+    <!-- display navigation bar -->
+    <div data-role="navbar">
+      <ul>
+        <li><a href="index.html" data-icon="home"  class="ui-btn-active">Home</a></li>
+        <li><a href="feedback_page.html" data-icon="comment">Feedback</a></li>
+        <li><a href="developer.html" data-icon="user">Developer</a></li>
+        <li><a href="help.html" data-icon="info">Help</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- TAFE button to be displayed to the right side of the page-->
+  <div align="right"> <a href="tafe.html" align="right">Tafe</a> </div>
+  
+  <!-- display content about Uni2Go for the uni page-->
+  <div id="wrap">
+    <h1 id="header">List of Universities</h1>
+    <ul id="list">
+      <li><a href="#/australia/">Australian Catholic University</a></li>
+      <li><a href="#/austria/">Charles Sturt University </a></li>
+      <li><a href="#/belgium/">Chisholm Institute </a></li>
+      <li><a href="#/brazil/">Deakin University</a></li>
+      <li><a href="#/canada/">La Trobe University</a></li>
+      <li><a href="#/denmark/">Melbourne Institute of Technology</a></li>
+      <li><a href="#/finland/">Melbourne Polytechnic</a></li>
+      <li><a href="#/france/">Monash University</a></li>
+      <li><a href="#/germany/">Melbourne University Private</a></li>
+      <li><a href="#/greece/">Open Universities</a></li>
+      <li><a href="#/ireland/">RMIT University</a></li>
+      <li><a href="#/israel/">Swinburne University of Technology</a></li>
+      <li><a href="#/italy/">University of Divinity</a></li>
+      <li><a href="#/japan/">University of Melbourne</a></li>
+      <li><a href="#/luxembourg/">Victoria University</a></li>
+    </ul>
+    <p><a href="http://kilianvalkhof.com/2010/javascript/how-to-build-a-fast-simple-list-filter-with-jquery/">Back to blogpost on kilianvalkhof.com</a></p>
+  </div>
+  
+  <!-- display footer -->
+  <div data-role="footer">
+    <h2>&copy; Uni2Go 2015</h2>
+  </div>
+</div>
+</body>
+</html>
