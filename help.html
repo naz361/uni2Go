@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>jQuery Mobile page</title>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="themes/theme.css" />
-<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-</head>
+	<head>
+		<title>Uni2Go</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="themes/theme.css" />
+			<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+			<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+			<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+			<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	</head>
 
-<body>
-<div data-role="page" id="index" data-theme="e">
-  <div data-role="header">
-    <h1>Uni2Go</h1>
-    <!-- display navigation bar -->
-    <div data-role="navbar">
-      <ul>
-        <li><a href="index.html" data-icon="home">Home</a></li>
-        <li><a href="feedback_page.html" data-icon="comment">Feedback</a></li>
-        <li><a href="developer.html" data-icon="user">Developer</a></li>
-        <li><a href="help.html" data-icon="info" class="ui-btn-active">Help</a></li>
-      </ul>
-    </div>
-  </div>
-  <!-- display content about Uni2Go for the help page--> 
-  
-  
-  <!-- display footer -->
-  <div data-role="footer">
-    <h2>&copy; Uni2Go 2015</h2>
-  </div>
-</div>
-</body>
+	<body>
+	<div data-role="page" id="index" data-theme="e">
+	  <div data-role="header">
+	    <h1>Uni2Go</h1>
+	    
+	    <!-- display navigation bar -->
+	    <div data-role="navbar">
+	      <ul>
+	        <li><a href="index.html" data-icon="home">Home</a></li>
+	        <li><a href="feedback_page.html" data-icon="comment">Feedback</a></li>
+	        <li><a href="developer.html" data-icon="user">Developer</a></li>
+	        <li><a href="help.html" data-icon="info" class="ui-btn-active">Help</a></li>
+	      </ul>
+	    </div>
+	  </div>
+  	<!-- display content about Uni2Go for the help page--> 
+  		<center><h1>Need some help?</h1>
+  		<p>Here are a few tips to make your life easier on Uni2Go.
+  		The first thing you'll see is the navigation bar:
+  		<br><img src="images/navbar.JPG">
+  		<br><b>Home</b> is where you are able to get a brief idea of who we are. 
+  		It is also the place you want to go to check out the universities and TAFEs.
+  		<br><b>Feedback</b> is where you can leave us some thoughts on what you think about Uni2Go.
+  		<br><b>Developer</b> introduces the team behind Uni2Go, it also features a video describing Uni2Go.</p>
+  		
+  		The homepage features the following two buttons:
+  		<br><a href="uni.html" data-role="button" data-inline="true">UNI</a> <a href="tafe.html" data-role="button" data-inline="true">TAFE</a>
+  		<br>By selecting a button it will take you to the respective area.
+  		
+  		<p>Once in the Uni/TAFE page, you are then able to search a specific word, which will then filter through the Universities/TAFEs.
+  		<br><img src="images/search.JPG"></p>
+  		</center>
+	<!-- display footer -->
+	  	<div data-role="footer">
+	   	 <h2>&copy; Uni2Go 2015</h2>
+	  	</div>
+	</div>
+	</body>
 </html>
