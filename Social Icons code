@@ -19,6 +19,15 @@ La Trobe Uni
 <a class="facebook_square24 tsc_social_square24" title="facebook" href="https://www.facebook.com/latrobe">facebook</a>
 <a class="twitter2_square24 tsc_social_square24" title="twitter" href="https://twitter.com/latrobe">twitter</a>
     
+Melbourne Institue of Technology
+FACEBOOK: https://www.facebook.com/Melbourne-Institute-of-Technology-185583738155242/
+TWITTER: https://twitter.com/melbinstuom
+
+Melbourne PolitechniC University
+FACEBOOK: https://www.facebook.com/MelbournePolytechnic
+TWITTER: https://twitter.com/melbpoly
+
+    
 Monash Uni
 <a class="twitter2_square24 tsc_social_square24" title="twitter" href="https://twitter.com/MonashUni">twitter</a>
 <a class="facebook_square24 tsc_social_square24" title="facebook" href="https://www.facebook.com/Monash.University">facebook</a>
@@ -64,18 +73,10 @@ Chisholm
     
 
 
-    
-$("#shareIconsCount").jsSocials({
-    url: "https://www.facebook.com/Australian.Catholic.University",
-    text: "ACU",
-    showCount: true,
-    showLabel: false,
-    shares: [
-        { share: "twitter", via: "artem_tabalin", hashtags: "search,google" },
-        "facebook",
-        "googleplus",
-        "linkedin",
-        "pinterest"
-    ]
-});
+
+
+<!-- external link for facebook page--> 
+          <a href="https://www.facebook.com/charlessturtuni" target="_blank"> <img src="images/facebook_icon.png" alt="Charles Facebook Page" width="48" height="48" align="middle"></a> 
+          <!-- external link for twitter page--> 
+          <a href="https://twitter.com/CharlesSturtUni?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"> <img src="images/twitter-icon.png" alt="Charles Twitter Page" width="50" height="50" align="middle"></a>
     
