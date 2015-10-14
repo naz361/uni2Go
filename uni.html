@@ -9,69 +9,6 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<style>
-body {
- background:#fff font-size:13px;
-}
-#wrap {
-	position: relative;
-	width: 220px;
-	margin: 50px auto 0;
-}
-#header {
-	position: relative;
-	line-height: 1em;
-}
-.filterform {
-	width: 220px;
-	font-size: 12px;
-	display: block;
-}
-.filterform input {
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-}
-</style>
-<script>
-(function ($) {
-  // custom css expression for a case-insensitive contains()
-  jQuery.expr[':'].Contains = function(a,i,m){
-      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-  };
-
-
-  function listFilter(header, list) { // header is any element, list is an unordered list
-    // create and add the filter form to the header
-    var form = $("<form>").attr({"class":"filterform","action":"#"}),
-        input = $("<input>").attr({"class":"filterinput","type":"text"});
-    $(form).append(input).appendTo(header);
-
-    $(input)
-      .change( function () {
-        var filter = $(this).val();
-        if(filter) {
-          // this finds all links in a list that contain the input,
-          // and hide the ones not containing the input while showing the ones that do
-          $(list).find("a:not(:Contains(" + filter + "))").parent().slideUp();
-          $(list).find("a:Contains(" + filter + ")").parent().slideDown();
-        } else {
-          $(list).find("li").slideDown();
-        }
-        return false;
-      })
-    .keyup( function () {
-        // fire the above change event after every letter
-        $(this).change();
-    });
-  }
-
-  //ondomready
-  $(function () {
-    listFilter($("#header"), $("#list"));
-  });
-}(jQuery));
-</script>
 </head>
 
 <body>
@@ -88,35 +25,303 @@ body {
       </ul>
     </div>
   </div>
+  
   <!-- TAFE button to be displayed to the right side of the page-->
-  <div align="right"> <a href="tafe.html" align="right">Tafe</a> </div>
+  <div align="right"> <a href="tafe.html" data-role="button" data-inline="true">TAFE</a> </div>
   
   <!-- display content about Uni2Go for the uni page-->
   <div id="wrap">
-    <h1 id="header">List of Universities</h1>
-    <ul id="list">
-      <li><a href="#/australia/">Australian Catholic University</a></li>
-      <li><a href="#/austria/">Charles Sturt University </a></li>
-      <li><a href="#/belgium/">Chisholm Institute </a></li>
-      <li><a href="#/brazil/">Deakin University</a></li>
-      <li><a href="#/canada/">La Trobe University</a></li>
-      <li><a href="#/denmark/">Melbourne Institute of Technology</a></li>
-      <li><a href="#/finland/">Melbourne Polytechnic</a></li>
-      <li><a href="#/france/">Monash University</a></li>
-      <li><a href="#/germany/">Melbourne University Private</a></li>
-      <li><a href="#/greece/">Open Universities</a></li>
-      <li><a href="#/ireland/">RMIT University</a></li>
-      <li><a href="#/israel/">Swinburne University of Technology</a></li>
-      <li><a href="#/italy/">University of Divinity</a></li>
-      <li><a href="#/japan/">University of Melbourne</a></li>
-      <li><a href="#/luxembourg/">Victoria University</a></li>
-    </ul>
-    <p><a href="http://kilianvalkhof.com/2010/javascript/how-to-build-a-fast-simple-list-filter-with-jquery/">Back to blogpost on kilianvalkhof.com</a></p>
-  </div>
-  
-  <!-- display footer -->
-  <div data-role="footer">
-    <h2>&copy; Uni2Go 2015</h2>
+    <h1 id="header">
+      <center>
+        Universities in Melbourne
+      </center>
+    </h1>
+    <!-- Search Bar function for universities to be searched for-->
+    <form>
+      <input data-type="search" id="searchForCollapsibleSetChildren">
+    </form>
+    <div data-role="collapsible-set" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+      <div data-role="collapsible" data-filtertext="ACU Bachelor of Information Technology Bachelor of Business Administration">
+        <h3>Australian Catholic University</h3>
+        <ul data-role="listview" data-inset="false">
+          <!-- external link for the university site--> 
+          <a href="http://www.acu.edu.au/study_at_acu/courses" target="_blank" data-role="button" data-inline="true"> ACU Course Search </a> <a class="facebook_square24 tsc_social_square24" title="facebook" href="https://www.facebook.com/Australian.Catholic.University">facebook</a> <a class="twitter2_square24 tsc_social_square24" title="twitter" href="https://twitter.com/ACUmedia">twitter</a>
+          <li data-filtertext="ACU Bachelor of Information Technology">Bachelor of Information Technology </li>
+          <li data-filtertext="ACU Bachelor of Business Administration">Bachelor of Information Technology/Bachelor of Business Administration</li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="Charles Sturt University Bachelor of Information Technology Bachelor of Computer Science Master of Mobile Applications Development Bachelor of Information Technology (Honours) Doctor of Information Technology Doctor of Philosophy - Faculty of Business">
+        <h3>Charles Sturt University</h3>
+        <ul data-role="listview" data-inset="false">
+          <!-- external link for the university site--> 
+          <a href="http://www.csu.edu.au/courses" target="_blank" data-role="button" data-inline="true"> Charles Sturt University Course Search </a>
+          <li data-filtertext="Charles Sturt University Bachelor of Information Technology">Bachelor of Information Technology</li>
+          <li data-filtertext="Charles Sturt University Bachelor of Computer Science">Bachelor of Computer Science</li>
+          <li data-filtertext="Charles Sturt University Master of Mobile Applications Development">Master of Mobile Applications Development</li>
+          <li data-filtertext="Charles Sturt University Bachelor of Information Technology (Honours)">Bachelor of Information Technology (Honours)</li>
+          <li data-filtertext="Charles Sturt University Doctor of Information Technology">Doctor of Information Technology</li>
+          <li data-filtertext="Charles Sturt University Doctor of Philosophy - Faculty of Business">Doctor of Philosophy - Faculty of Business</li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="Deakin University Bachelor of Information Technology Bachelor of Computer Science Bachelor of Games Design and Development Bachelor of IT Security Bachelor of Information Systems/Bachelor of Information Technology Bachelor of Criminology/Bachelor of IT Security Graduate Certificate of Information Technology Graduate Certificate of Data Analytics Graduate Diploma of Information Technologyy Master of Data Analytics Master of Information Technology Master of Information Technology (Professional) Master of Science (Research)">
+        <h3>Deakin University</h3>
+        <ul data-role="listview" data-inset="false">
+          <!-- external link for the university site--> 
+          <a href="http://www.deakin.edu.au/study-at-deakin/find-a-course" target="_blank" data-role="button" data-inline="true">Deakin University Course Search </a>
+          <li data-filtertext="Deakin University Bachelor of Information Technology">Bachelor of Information Technology</li>
+          <li data-filtertext="Deakin University Bachelor of Computer Science">Bachelor of Computer Science</li>
+          <li data-filtertext="Deakin University Bachelor of Games Design and Development">Bachelor of Games Design and Development</li>
+          <li data-filtertext="Deakin University Bachelor of IT Security">Bachelor of IT Security</li>
+          <li data-filtertext="Deakin University Bachelor of Information Systems/Bachelor of Information Technology">Bachelor of Information Systems/Bachelor of Information Technology</li>
+          <li data-filtertext="Deakin University Bachelor of Criminology/Bachelor of IT Security">Bachelor of Criminology/Bachelor of IT Security</li>
+          <li data-filtertext="Deakin University Graduate Certificate of Information Technology">Graduate Certificate of Information Technology</li>
+          <li data-filtertext="Deakin University Graduate Certificate of Data Analytics">Graduate Certificate of Data Analytics</li>
+          <li data-filtertext="Deakin University Graduate Diploma of Information Technologyy">Graduate Diploma of Information Technologyy</li>
+          <li data-filtertext="Deakin University Master of Data Analytics">Master of Data Analytics</li>
+          <li data-filtertext="Deakin University Master of Information Technology">Master of Information Technology</li>
+          <li data-filtertext="Planets Master of Information Technology (Professional)">Master of Information Technology (Professional)</li>
+          <li data-filtertext="Planets Master of Science (Research)">Master of Science (Research)</li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="La Trobe University Bachelor of Computer Science in Games Technology Bachelor of Business Bachelor of Business Information Systems Bachelor of Information Technology Bachelor of Health Information Management Bachelor of Science Master of Business">
+        <h3>La Trobe University</h3>
+        <ul data-role="listview" data-inset="false">
+          <a href="http://www.latrobe.edu.au/courses" target="_blank" data-role="button" data-inline="true">La Trobe University Course Search </a>
+          <li data-filtertext="La Trobe University Bachelor of Computer Science in Games Technology">Bachelor of Computer Science in Games Technology</li>
+          <li data-filtertext="La Trobe University Bachelor of Business">Bachelor of Business</li>
+          <li data-filtertext="La Trobe University Bachelor of Business Information Systems">Bachelor of Business Information Systems</li>
+          <li data-filtertext="La Trobe University Bachelor of Information Technology">Bachelor of Information Technology</li>
+          <li data-filtertext="La Trobe University Bachelor of Health Information Management">Bachelor of Health Information Management</li>
+          <li data-filtertext="La Trobe University Bachelor of Science">Bachelor of Science</li>
+          <li data-filtertext="La Trobe University Mercury">Master of Business</li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="Melbourne Institute of Technology Bachelor of Business Bachelor of Networking Bachelor of Engineering Technology (Telecommunications) Master of Engineering (Telecommunications) Master of Networking">
+        <h3>Melbourne Institute of Technology</h3>
+        <ul data-role="listview" data-inset="false">
+          <!-- external link for the university site--> 
+          <a href="http://www.mit.edu.au/study-with-us/why-choose-mit" target="_blank" data-role="button" data-inline="true">Melbourne Institute of Technology Course Search </a>
+          <li data-filtertext="Melbourne Institute of Technology Bachelor of Business">Bachelor of Business</li>
+          <li data-filtertext="Melbourne Institute of Technology Bachelor of Networking">Bachelor of Networking</li>
+          <li data-filtertext="Melbourne Institute of Technology Bachelor of Engineering Technology (Telecommunications)">Bachelor of Engineering Technology (Telecommunications)</li>
+          <li data-filtertext="Melbourne Institute of Technology Master of Engineering (Telecommunications)">Master of Engineering (Telecommunications)</li>
+          <li data-filtertext="Melbourne Institute of Technology Master of Networking">Master of Networking</li>
+          <li data-filtertext="Melbourne Institute of Technology Master of Professional Accounting">Master of Professional Accounting</li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="Melbourne Polytechnic Bachelor of Information Technology Bachelor of Agriculture and Technology Bachelor of Engineering Technology">
+        <h3>Melbourne Polytechnic</h3>
+        <ul data-role="listview" data-inset="false">
+          <!-- external link for the university site--> 
+          <a href="http://www.melbournepolytechnic.edu.au/courses/search" target="_blank" data-role="button" data-inline="true">Melbourne Polytechnic Course Search </a>
+          <li data-filtertext="Melbourne Polytechnic Bachelor of Information Technology">Bachelor of Information Technology</li>
+          <li data-filtertext="Melbourne Polytechnic Bachelor of Agriculture and Technology">Bachelor of Agriculture and Technology</li>
+          <li data-filtertext="Melbourne Polytechnic Bachelor of Engineering Technology">Bachelor of Engineering Technology</li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="Monash University Bachelor of Business Information Systems Bachelor of Business Information Systems (Honours) Bachelor of Computer and Information Sciences Bachelor of Informatics and Computation Advanced (Honours) Bachelor of Commerce and Bachelor of Business Information Systems Master of Business Information Systems Doctor of Philosophy Diploma of Engineering (Information Technology) Bachelor of Computer Science Bachelor of Computer Science (Honours) Bachelor of Pharmaceutical Science Bachelor of Pharmaceutical Science Advanced (Honours) Bachelor of Science Bachelor of Science (Honours) Bachelor of Science (Science Scholar Program) (Honours) Bachelor of Science Advanced - Global Challenges (Honours) Bachelor of Science Advanced - Research (Honours) Bachelor of Science Advanced - Research (Honours) Bachelor of Software Engineering Bachelor of Software Engineering Bachelor of Arts and Bachelor of Science Bachelor of Journalism and Bachelor of Science Bachelor of Science and Bachelor of Computer Science  Bachelor of Science and Bachelor of Global Studies Doctor of Philosophy Bachelor of Computer Systems Engineering (Honours) Bachelor of Engineering (Honours) Bachelor of Informatics and Computation Advanced (Honours) Bachelor of Science (Science Scholar Program) (Honours) Bachelor of Science Advanced - Global Challenges (Honours) Bachelor of Science Advanced - Research (Honours)Bachelor of Aerospace Engineering (Honours) and Bachelor of Science Bachelor of Biomedical Science and Bachelor of Science Bachelor of Commerce and Bachelor of Science Bachelor of Environmental Engineering (Honours) and Bachelor of Science Bachelor of Environmental Engineering (Honours) and Bachelor of Science Bachelor of Commerce (Honours) Bachelor of Engineering (Honours) and Bachelor of Arts Bachelor of Laws (Honours) and Bachelor of Engineering (Honours) Diploma of Engineering (Engineering) Diploma of Engineering (Information Technology) Master of Engineering Science (Research) Master of Information Technology Monash University Foundation Year – Extended Monash University Foundation Year – IntensiveMonash University Foundation Year – Standard Bachelor of Business Information Systems Bachelor of Business Information Systems (Honours) Bachelor of Computer and Information Sciences Bachelor of Informatics and Computation Advanced (Honours) Bachelor of Information Technology and Systems Bachelor of Information Technology and Systems (Honours) Honours degree of Bachelor of Computer and Information Sciences Master of Business Information Systems Master of Information Technology Graduate Diploma in Information and Knowledge Management Master of Philosophy Master of Philosophy in Computer and Information Science ">
+        <h3>Monash University</h3>
+        <ul data-role="listview" data-inset="false">
+          <!-- external link for the university site--> 
+          <a href="http://monash.edu/study/coursefinder/" target="_blank" data-role="button" data-inline="true">Monash University Course Search </a>
+          <li data-filtertext="Planets Acura">Business Information systems</li>
+          <ul>
+            <li data-filtertext="Monash University Bachelor of Business Information Systems">Bachelor of Business Information Systems</li>
+            <li data-filtertext="Monash University Bachelor of Business Information Systems (Honours)">Bachelor of Business Information Systems (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Computer and Information Sciences">Bachelor of Computer and Information Sciences</li>
+            <li data-filtertext="Monash University Bachelor of Informatics and Computation Advanced (Honours)">Bachelor of Informatics and Computation Advanced (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Commerce and Bachelor of Business Information Systems">Bachelor of Commerce and Bachelor of Business Information Systems</li>
+            <li data-filtertext="Monash University Master of Business Information Systems">Master of Business Information Systems</li>
+            <li data-filtertext="Monash University Doctor of Philosophy">Doctor of Philosophy</li>
+            <li data-filtertext="Monash University Diploma of Engineering (Information Technology)">Diploma of Engineering (Information Technology)</li>
+          </ul>
+          <li data-filtertext="Planets Jupiter">Computer Science</li>
+          <ul>
+            <li data-filtertext="Monash University Bachelor of Computer Science">Bachelor of Computer Science</li>
+            <li data-filtertext="Monash University Bachelor of Computer Science (Honours)">Bachelor of Computer Science (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Informatics and Computation Advanced (Honours)">Bachelor of Informatics and Computation Advanced (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Pharmaceutical Science">Bachelor of Pharmaceutical Science</li>
+            <li data-filtertext="Monash University Bachelor of Pharmaceutical Science Advanced (Honours)">Bachelor of Pharmaceutical Science Advanced (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Science">Bachelor of Science</li>
+            <li data-filtertext="Monash University Bachelor of Science (Honours)">Bachelor of Science (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Science (Science Scholar Program) (Honours)">Bachelor of Science (Science Scholar Program) (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Science Advanced - Global Challenges (Honours)">Bachelor of Science Advanced - Global Challenges (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Science Advanced - Research (Honours)">Bachelor of Science Advanced - Research (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Science Advanced - Research (Honours)">Bachelor of Science Advanced - Research (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Software Engineering">Bachelor of Software Engineering</li>
+            <li data-filtertext="Monash University Bachelor of Software Engineering">Bachelor of Software Engineering</li>
+            <li data-filtertext="Monash University Bachelor of Arts and Bachelor of Science">Bachelor of Arts and Bachelor of Science</li>
+            <li data-filtertext="Monash University Bachelor of Journalism and Bachelor of Science">Bachelor of Journalism and Bachelor of Science</li>
+            <li data-filtertext="Monash University Bachelor of Science and Bachelor of Computer Science">Bachelor of Science and Bachelor of Computer Science</li>
+            <li data-filtertext="Monash University Bachelor of Science and Bachelor of Global Studies">Bachelor of Science and Bachelor of Global Studies</li>
+            <li data-filtertext="Monash University Doctor of Philosophy">Doctor of Philosophy</li>
+            <li data-filtertext="Monash University Bachelor of Computer Systems Engineering (Honours)">Bachelor of Computer Systems Engineering (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Engineering (Honours)">Bachelor of Engineering (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Informatics and Computation Advanced (Honours)">Bachelor of Informatics and Computation Advanced (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Science (Science Scholar Program) (Honours)">Bachelor of Science (Science Scholar Program) (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Science Advanced - Global Challenges (Honours)">Bachelor of Science Advanced - Global Challenges (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Science Advanced - Research (Honours)">Bachelor of Science Advanced - Research (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Aerospace Engineering (Honours) and Bachelor of Science">Bachelor of Aerospace Engineering (Honours) and Bachelor of Science</li>
+            <li data-filtertext="Monash University Bachelor of Biomedical Science and Bachelor of Science">Bachelor of Biomedical Science and Bachelor of Science</li>
+            <li data-filtertext="Monash University Bachelor of Commerce and Bachelor of Science">Bachelor of Commerce and Bachelor of Science</li>
+            <li data-filtertext="Monash University Bachelor of Environmental Engineering (Honours) and Bachelor of Science">Bachelor of Environmental Engineering (Honours) and Bachelor of Science</li>
+            <li data-filtertext="Monash University Bachelor of Laws (Honours) and Bachelor of Science">Bachelor of Laws (Honours) and Bachelor of Science</li>
+          </ul>
+          <li data-filtertext="Planets Mars">Computer Systems Engineering</li>
+          <ul>
+            <li data-filtertext="Monash University Bachelor of Commerce (Honours)">Bachelor of Commerce (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Engineering (Honours) and Bachelor of Arts">Bachelor of Engineering (Honours) and Bachelor of Arts</li>
+            <li data-filtertext="Monash University Bachelor of Laws (Honours) and Bachelor of Engineering (Honours)">Bachelor of Laws (Honours) and Bachelor of Engineering (Honours)</li>
+            <li data-filtertext="Monash University Diploma of Engineering (Engineering)">Diploma of Engineering (Engineering)</li>
+            <li data-filtertext="Monash University Diploma of Engineering (Information Technology)">Diploma of Engineering (Information Technology)</li>
+            <li data-filtertext="Monash University Master of Engineering Science (Research)">Master of Engineering Science (Research)</li>
+            <li data-filtertext="Monash University Master of Information Technology">Master of Information Technology</li>
+            <li data-filtertext="Monash University Monash University Foundation Year – Extended">Monash University Foundation Year – Extended</li>
+            <li data-filtertext="Monash University Monash University Foundation Year – Intensive">Monash University Foundation Year – Intensive</li>
+            <li data-filtertext="Monash University Monash University Foundation Year – Standard">Monash University Foundation Year – Standard</li>
+          </ul>
+          <li data-filtertext="Monash University Computing">Computing</li>
+          <ul>
+            <li data-filtertext="Monash University Bachelor of Business Information Systems">Bachelor of Business Information Systems</li>
+            <li data-filtertext="Monash University Bachelor of Business Information Systems (Honours)">Bachelor of Business Information Systems (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Computer and Information Sciences">Bachelor of Computer and Information Sciences</li>
+            <li data-filtertext="Monash University Bachelor of Informatics and Computation Advanced (Honours)">Bachelor of Informatics and Computation Advanced (Honours)</li>
+            <li data-filtertext="Monash University Bachelor of Informatics and Computation Advanced (Honours)">Bachelor of Information Technology and Systems</li>
+            <li data-filtertext="Monash University Bachelor of Information Technology and Systems (Honours)">Bachelor of Information Technology and Systems (Honours)</li>
+            <li data-filtertext="Monash University Honours degree of Bachelor of Computer and Information Sciences">Honours degree of Bachelor of Computer and Information Sciences</li>
+            <li data-filtertext="Monash University Master of Business Information Systems">Master of Business Information Systems</li>
+            <li data-filtertext="Monash University Master of Information Technology">Master of Information Technology</li>
+            <li data-filtertext="Monash University Graduate Diploma in Information and Knowledge Management">Graduate Diploma in Information and Knowledge Management</li>
+            <li data-filtertext="Monash University Master of Philosophy">Master of Philosophy</li>
+            <li data-filtertext="Monash University Master of Philosophy in Computer and Information Science">Master of Philosophy in Computer and Information Science</li>
+          </ul>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="RMIT University Bachelor of Engineering Master of Engineering PhD (Electrical & Electronic Engineering) Bachelor of Engineering (Computer and Network Engineering) (Honours) Bachelor of Engineering (Computer and Network Engineering) (Honours)/Bachelor of Computer Science Bachelor of Engineering (Electronic & Communication Engineering)(Hons)/Bachelor of Computer Science Bachelor of Engineering (Computer and Network Engineering) (Honours)/Bachelor of Business (Mgt) Bachelor of Design (Animation and Interactive Media) Bachelor of Design (Digital Media) Bachelor of Design (Games) Bachelor of Information Technology (Games and Graphics Programming) Bachelor of Media and Communication (Honours) Master of Animation, Games and Interactivity PhD(Media & Communication) Bachelor of Computer Science Bachelor of Computer Science (Honours) Bachelor of Engineering (Computer and Network Engineering)/Bachelor of Computer Science Bachelor of Engineering (Electronic & Communication Engineering)/Bachelor of Computer Science Bachelor of Technology (Computing Studies) Master of Computer Science Master of Technology (Enterprise Architecture) Master of Science (Computer Science) PhD Bachelor of Business (Honours) Bachelor of Business (Information Systems) (Applied) Bachelor of Business (Information Systems) PhD (Business Information Systems) Master of Applied Science (Information Security and Assurance) Master of Business Information Technology Master of Business (Business Information Systems) Graduate Certificate in Business Information Technology Bachelor of Software Engineering Graduate Certificate in Information Management Master of Applied Science (Information Security and Assurance) Master of Information Technology Master of Business (Business Information Systems) Associate Degree in Information Technology Bachelor of Information Technology Certificate IV in Information Technology Networking PhD (Business Information Systems) PhD (Computer Science) Master of Computer Science Master of Business Information Technology Master of Information Technology Master of Business (Business Information Systems) ">
+        <h3>RMIT University</h3>
+        <ul data-role="listview" data-inset="false">
+          <!-- external link for the university site--> 
+          <a href="https://www.rmit.edu.au/study-with-us/" target="_blank" data-role="button" data-inline="true">RMIT University Course Search </a>
+          <li data-filtertext="RMIT University Acura"> Engineering</li>
+          <ul>
+            <li data-filtertext="RMIT University Bachelor of Engineering">Bachelor of Engineering</li>
+            <li data-filtertext="RMIT University Master of Engineering">Master of Engineering</li>
+            <li data-filtertext="RMIT University PhD (Electrical & Electronic Engineering)">PhD (Electrical & Electronic Engineering)</li>
+            <li data-filtertext="RMIT University Bachelor of Engineering (Computer and Network Engineering) (Honours)">Bachelor of Engineering (Computer and Network Engineering) (Honours)</li>
+            <li data-filtertext="RMIT University Bachelor of Engineering (Computer and Network Engineering) (Honours)/Bachelor of Computer Science">Bachelor of Engineering (Computer and Network Engineering) (Honours)/Bachelor of Computer Science</li>
+            <li data-filtertext="RMIT University Bachelor of Engineering (Electronic & Communication Engineering)(Hons)/Bachelor of Computer Science">Bachelor of Engineering (Electronic & Communication Engineering)(Hons)/Bachelor of Computer Science</li>
+            <li data-filtertext="RMIT University Bachelor of Engineering (Computer and Network Engineering) (Honours)/Bachelor of Business (Mgt)">Bachelor of Engineering (Computer and Network Engineering) (Honours)/Bachelor of Business (Mgt)</li>
+          </ul>
+          <li data-filtertext="RMIT University Jupiter">Interactive Media & Games</li>
+          <ul>
+            <li data-filtertext="RMIT University Bachelor of Design (Animation and Interactive Media)">Bachelor of Design (Animation and Interactive Media)</li>
+            <li data-filtertext="RMIT University Bachelor of Design (Digital Media)">Bachelor of Design (Digital Media)</li>
+            <li data-filtertext="RMIT University Bachelor of Design (Games)">Bachelor of Design (Games)</li>
+            <li data-filtertext="RMIT University Bachelor of Information Technology (Games and Graphics Programming)">Bachelor of Information Technology (Games and Graphics Programming)</li>
+            <li data-filtertext="RMIT University Bachelor of Media and Communication (Honours)">Bachelor of Media and Communication (Honours)</li>
+            <li data-filtertext="RMIT University Master of Animation, Games and Interactivity">Master of Animation, Games and Interactivity</li>
+            <li data-filtertext="RMIT University Bachelor of Engineering">PhD(Media & Communication)</li>
+          </ul>
+          <li data-filtertext="RMIT University Mars">Computer Science</li>
+          <ul>
+            <li data-filtertext="RMIT University Bachelor of Computer Science">Bachelor of Computer Science</li>
+            <li data-filtertext="RMIT University Bachelor of Computer Science (Honours)">Bachelor of Computer Science (Honours)</li>
+            <li data-filtertext="RMIT University Bachelor of Engineering (Computer and Network Engineering)/Bachelor of Computer Science">Bachelor of Engineering (Computer and Network Engineering)/Bachelor of Computer Science</li>
+            <li data-filtertext="RMIT University Bachelor of Engineering (Electronic & Communication Engineering)/Bachelor of Computer Science">Bachelor of Engineering (Electronic & Communication Engineering)/Bachelor of Computer Science</li>
+            <li data-filtertext="RMIT University Bachelor of Technology (Computing Studies)">Bachelor of Technology (Computing Studies)</li>
+            <li data-filtertext="RMIT University Master of Computer Science">Master of Computer Science</li>
+            <li data-filtertext="RMIT University Master of Technology (Enterprise Architecture)">Master of Technology (Enterprise Architecture)</li>
+            <li data-filtertext="RMIT University PhD">PhD</li>
+          </ul>
+          <li data-filtertext="RMIT University Mercury">Information systems</li>
+          <ul>
+            <li data-filtertext="RMIT University Bachelor of Business (Honours)">Bachelor of Business (Honours)</li>
+            <li data-filtertext="RMIT University Bachelor of Business (Information Systems) (Applied)">Bachelor of Business (Information Systems) (Applied)</li>
+            <li data-filtertext="RMIT University Bachelor of Business (Information Systems)">Bachelor of Business (Information Systems)</li>
+            <li data-filtertext="RMIT University PhD (Business Information Systems)">PhD (Business Information Systems)</li>
+            <li data-filtertext="RMIT University Master of Applied Science (Information Security and Assurance)">Master of Applied Science (Information Security and Assurance)</li>
+            <li data-filtertext="RMIT University Master of Business Information Technology">Master of Business Information Technology</li>
+            <li data-filtertext="RMIT University Master of Business (Business Information Systems)">Master of Business (Business Information Systems)</li>
+            <li data-filtertext="RMIT University Graduate Certificate in Business Information Technology">Graduate Certificate in Business Information Technology</li>
+          </ul>
+          <li data-filtertext="RMIT University Software Engineering">Software Engineering</li>
+          <ul>
+            <li data-filtertext="RMIT University Bachelor of Software Engineering">Bachelor of Software Engineering</li>
+          </ul>
+          <li data-filtertext="RMIT University Information and security">Information and security</li>
+          <ul>
+            <li data-filtertext="RMIT University Graduate Certificate in Information Management">Graduate Certificate in Information Management</li>
+            <li data-filtertext="RMIT University Master of Applied Science (Information Security and Assurance)">Master of Applied Science (Information Security and Assurance)</li>
+            <li data-filtertext="RMIT University Master of Information Technology">Master of Information Technology</li>
+            <li data-filtertext="RMIT University Master of Business (Business Information Systems)">Master of Business (Business Information Systems)</li>
+            <li data-filtertext="RMIT University PhD (Business Information Systems)">PhD (Business Information Systems)</li>
+          </ul>
+          <li data-filtertext="RMIT University Information technology">Information technology</li>
+          <ul>
+            <li data-filtertext="RMIT University Associate Degree in Information Technology">Associate Degree in Information Technology</li>
+            <li data-filtertext="RMIT University Bachelor of Information Technology">Bachelor of Information Technology</li>
+            <li data-filtertext="RMIT University Certificate IV in Information Technology Networking">Certificate IV in Information Technology Networking</li>
+            <li data-filtertext="RMIT University PhD (Business Information Systems)">PhD (Business Information Systems)</li>
+            <li data-filtertext="RMIT University PhD (Computer Science)">PhD (Computer Science)</li>
+            <li data-filtertext="RMIT University Master of Computer Science">Master of Computer Science</li>
+            <li data-filtertext="RMIT University Master of Business Information Technology">Master of Business Information Technology</li>
+            <li data-filtertext="RMIT University Master of Information Technology">Master of Information Technology</li>
+            <li data-filtertext="RMIT University Master of Business (Business Information Systems)">Master of Business (Business Information Systems)</li>
+          </ul>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="Swinburne University of Technology Bachelor of Computer Science Bachelor of Engineering (Electrical and Electronic) (Honours)/ Bachelor of Computer Science Bachelor of Engineering (Robotics and Mechatronics) (Honours) / Bachelor of Computer Science Bachelor of Games and Interactivity / Bachelor of Computer Science Bachelor of Computer Science (Honours) Bachelor of Information Technology  Bachelor of Information and Communication Technology (Professional) Bachelor of Business Information Systems Bachelor of Information and Communication Technology Bachelor of Laws / Bachelor of Business Information Systems Bachelor of Information and Communication Technology (Professional) Graduate Certificate of Information Technology Project Management Master of Information Technology Project Management">
+        <h3>Swinburne University of Technology</h3>
+        <ul data-role="listview" data-inset="false">
+          <!-- external link for the university site--> 
+          <a href="http://www.swinburne.edu.au/study/options/find/" target="_blank" data-role="button" data-inline="true">Swinburne University of Technology Course Search </a>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Computer Science">Bachelor of Computer Science</li>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Engineering (Electrical and Electronic) (Honours)/ Bachelor of Computer Science">Bachelor of Engineering (Electrical and Electronic) (Honours)/ Bachelor of Computer Science</li>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Engineering (Robotics and Mechatronics) (Honours) / Bachelor of Computer Science">Bachelor of Engineering (Robotics and Mechatronics) (Honours) / Bachelor of Computer Science</li>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Games and Interactivity / Bachelor of Computer Science">Bachelor of Games and Interactivity / Bachelor of Computer Science</li>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Computer Science (Honours) ">Bachelor of Computer Science (Honours) </li>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Information Technology">Bachelor of Information Technology</li>
+          <li data-filtertext="Swinburne University of Technology  Bachelor of Information and Communication Technology (Professional)"> Bachelor of Information and Communication Technology (Professional)</li>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Business Information Systems">Bachelor of Business Information Systems</li>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Information and Communication Technology">Bachelor of Information and Communication Technology</li>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Laws / Bachelor of Business Information Systems">Bachelor of Laws / Bachelor of Business Information Systems</li>
+          <li data-filtertext="Swinburne University of Technology Bachelor of Information and Communication Technology (Professional)">Bachelor of Information and Communication Technology (Professional)</li>
+          <li data-filtertext="Swinburne University of Technology Graduate Certificate of Information Technology Project Management">Graduate Certificate of Information Technology Project Management</li>
+          <li data-filtertext="Swinburne University of Technology Master of Information Technology Project Management">Master of Information Technology Project Management</li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="University of Melbourne Bachelor of Science Bachelor of Biomedicine Bachelor of Environments Bachelor of Science Extended Diploma in Informatics ">
+        <h3>University of Melbourne</h3>
+        <ul data-role="listview" data-inset="false">
+          <!-- external link for the university site--> 
+          <a href="https://futurestudents.unimelb.edu.au/courses" target="_blank" data-role="button" data-inline="true">University of Melbourne Course Search </a>
+          <li data-filtertext="University of Melbourne Bachelor of Science">Bachelor of Science</li>
+          <li data-filtertext="University of Melbourne Bachelor of Biomedicine">Bachelor of Biomedicine</li>
+          <li data-filtertext="University of Melbourne Bachelor of Environments">Bachelor of Environments</li>
+          <li data-filtertext="University of Melbourne Bachelor of Science Extended">Bachelor of Science Extended</li>
+          <li data-filtertext="University of Melbourne Diploma in Informatics">Diploma in Informatics</li>
+        </ul>
+      </div>
+      <div data-role="collapsible" data-filtertext="Victoria University Bachelor of Information Technology Bachelor of Science (Honours) (Computer Science) Bachelor of Business (Information Systems Management) Master of Enterprise Resource Planning Management Master of Business Analytics (Professional) Master of Business (Enterprise Resource Planning Systems) Master of Applied Information Technology Master of Business Analytics">
+        <h3>Victoria University</h3>
+        <ul data-role="listview" data-inset="false">
+          <a href="https://www.vu.edu.au/courses" target="_blank" data-role="button" data-inline="true">Victoria University Course Search </a>
+          <li data-filtertext="Victoria University Bachelor of Information Technology">Bachelor of Information Technology</li>
+          <li data-filtertext="Victoria University Bachelor of Science (Honours) (Computer Science)">Bachelor of Science (Honours) (Computer Science)</li>
+          <li data-filtertext="Victoria University Bachelor of Business (Information Systems Management)">Bachelor of Business (Information Systems Management)</li>
+          <li data-filtertext="Victoria University Master of Enterprise Resource Planning Management">Master of Enterprise Resource Planning Management</li>
+          <li data-filtertext="Victoria University Master of Business Analytics (Professional)">Master of Business Analytics (Professional)</li>
+          <li data-filtertext="Victoria University Master of Business (Enterprise Resource Planning Systems)">Master of Business (Enterprise Resource Planning Systems)</li>
+          <li data-filtertext="Victoria University Master of Applied Information Technology">Master of Applied Information Technology</li>
+          <li data-filtertext="Victoria University Master of Business Analytics">Master of Business Analytics</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- display footer -->
+    <div data-role="footer">
+      <h2>&copy; Uni2Go 2015</h2>
+    </div>
   </div>
 </div>
 </body>
