@@ -66,8 +66,8 @@ Chisholm
 
     
 $("#shareIconsCount").jsSocials({
-    url: "http://google.com",
-    text: "Google Search Page",
+    url: "https://www.facebook.com/Australian.Catholic.University",
+    text: "ACU",
     showCount: true,
     showLabel: false,
     shares: [
