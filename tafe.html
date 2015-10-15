@@ -10,168 +10,168 @@
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
-
 <body>
 <div data-role="page" id="index" data-theme="e">
 <div data-role="header">
-  <center>
-    <a href="index.html"><img src="images/logo.png" style="width:75px;height:75px;"></a>
-  </center>
-  <h1>Uni2Go</h1>
-  <!-- display navigation bar -->
-  <div data-role="navbar">
-    <ul>
-      <li><a href="index.html" data-icon="home"  class="ui-btn-active">Home</a></li>
-      <li><a href="feedback_page.html" data-icon="comment">Feedback</a></li>
-      <li><a href="developer.html" data-icon="user">Developer</a></li>
-      <li><a href="help.html" data-icon="info">Help</a></li>
-    </ul>
-  </div>
+<center>
+<a href="index.html"><img src="images/logo.png" style="width:75px;height:75px;"></a>
+</center>
+<h1>Uni2Go</h1>
+<!-- display navigation bar -->
+<div data-role="navbar">
+<ul>
+<li><a href="index.html" data-icon="home" class="ui-btn-active">Home</a></li>
+<li><a href="feedback_page.html" data-icon="comment">Feedback</a></li>
+<li><a href="developer.html" data-icon="user">Developer</a></li>
+<li><a href="help.html" data-icon="info">Help</a></li>
+</ul>
 </div>
-
+</div>
 <!-- TAFE button to be displayed to the right side of the page-->
 <div align="right"> <a href="uni.html" data-role="button" data-inline="true">UNI</a> </div>
-
 <!-- display content about Uni2Go for the uni page-->
-
 <div id="wrap">
 <h1 id="header">
-  <center>
-    TAFES in Melbourne
-  </center>
+<center>
+TAFES in Melbourne
+</center>
 </h1>
 <form>
-  <input data-type="search" id="searchForCollapsibleSetChildren">
+<input data-type="search" id="searchForCollapsibleSetChildren">
 </form>
 <div data-role="collapsible-set" data-filter="true" data-theme="e" data-content-theme="e" data data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
-  <div data-role="collapsible" data-filtertext="Certificate in Business Information Systems Diploma in Business Information Systems">
-    <h3>Australian Catholic University</h3>
-    <!-- external link for facebook page-->
-    <ul data-role="listview" data-inset="false">
-      <li data-filtertext="Australian Catholic University Certificate in Business Information Systems">Certificate in Business Information Systems</li>
-      <li data-filtertext="Australian Catholic University Diploma in Business Information Systems">Diploma in Business Information Systems</li>
-      <a href="http://www.acu.edu.au" data-role="button" data-inline="true">ACU page </a> <a href="https://www.facebook.com/Australian.Catholic.University" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
-      <!-- external link for twitter page-->
-      <a href="http://www.twitter.com/ACUmedia" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
-    </ul>
-  </div>
-  <div data-role="collapsible" data-filtertext="Bachelor of Information Technology - TAFE integrated program">
-    <h3>Charles Sturt University</h3>
-    <ul data-role="listview" data-inset="false">
-      <li data-filtertext="Charles Sturt University Bachelor of Information Technology - TAFE integrated program">Bachelor of Information Technology - TAFE integrated program</li>
-      <a href="http://www.csu.edu.au/courses" data-role="button" data-inline="true">Charles Sturt page</a> <a href="https://www.facebook.com/charlessturtuni" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
-      <!-- external link for twitter page-->
-      <a href="https://twitter.com/CharlesSturtUni?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
-    </ul>
-  </div>
-  <div data-role="collapsible" data-filtertext="Diploma of Information Technology Networking Certificate IV in Programming/ Certificate IV in Information Technology Certificate IV in Information Technology Support (Traineeship) Certificate IV in Information Technology Support / Certificate IV in Information Technology (Networking) Certificate IV in Information Technology (Networking) Certificate IV in Information Technology – Traineeship Certificate IV in Information Technology Certificate III in Information, Digital Media & Technology- Traineeship Certificate III in Information, Digital Media & Technology Certificate II in Information, Digital Media & Technology">
-    <h3>Chisholm</h3>
-    <ul data-role="listview" data-inset="false">
-      <li data-filtertext="Chisholm Diploma of Information Technology Networking">Diploma of Information Technology Networking</li>
-      <li data-filtertext="Chisholm Certificate IV in Programming/ Certificate IV in Information Technology">Certificate IV in Programming/ Certificate IV in Information Technology</li>
-      <li data-filtertext="Chisholm Certificate IV in Information Technology Support (Traineeship)">Certificate IV in Information Technology Support (Traineeship)</li>
-      <li data-filtertext="Chisholm Certificate IV in Information Technology Support / Certificate IV in Information Technology (Networking)">Certificate IV in Information Technology Support / Certificate IV in Information Technology (Networking)</li>
-      <li data-filtertext="Chisholm Certificate IV in Information Technology (Networking)">Certificate IV in Information Technology (Networking)</li>
-      <li data-filtertext="Chisholm Certificate IV in Information Technology – Traineeship">Certificate IV in Information Technology – Traineeship</li>
-      <li data-filtertext="Chisholm Certificate IV in Information Technology">Certificate IV in Information Technology</li>
-      <li data-filtertext="Chisholm Certificate III in Information, Digital Media & Technology- Traineeship">Certificate III in Information, Digital Media & Technology- Traineeship</li>
-      <li data-filtertext="Chisholm Certificate III in Information, Digital Media & Technology">Certificate III in Information, Digital Media & Technology</li>
-      <li data-filtertext="Chisholm Certificate II in Information, Digital Media & Technology">Certificate II in Information, Digital Media & Technology</li>
-      <a href="http://www.chisholm.edu.au/courses" data-role="button" data-inline="true">Chisholm page</a> <a href="https://www.facebook.com/ChisholmInstitute" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
-      <!-- external link for twitter page-->
-      <a href="https://twitter.com/chisholm_inst" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
-    </ul>
-  </div>
-  <div data-role="collapsible" data-filtertext="Certificate IV in Information Technology Networking Diploma of Information Technology Certificate IV in Programming Certificate IV in Information Technology Support Diploma of Information Technology Networking Information Technology Degree Certificate III in Information, Digital Media and Technology Certificate IV in Digital and Interactive Games/ Certificate IV in Digital Media Technologies Certificate IV in Web-Based Technologies Certificate IV in Web-Based Technologies/Certificate IV in Digital Media Technologies Diploma of Digital Media Technologies Course Design Essentials Course Dynamic Web Development (CMS) Course Occupational Health and Safety within the IT Industry Course Mobile Applications Course Online Marketing Course Web Essentials Course Information, Digital Media and Technology for school students Information, Digital Media and Technology for school students">
-    <h3>Holmesglen</h3>
-    <ul data-role="listview" data-inset="false">
-      <li data-filtertext="Holmesglen Certificate IV in Information Technology Networking">Certificate IV in Information Technology Networking</li>
-      <li data-filtertext="Holmesglen Certificate IV in Programming">Certificate IV in Programming</li>
-      <li data-filtertext="Holmesglen Certificate IV in Information Technology Support">Certificate IV in Information Technology Support</li>
-      <li data-filtertext="Holmesglen ertificate IV in Digital and Interactive Games/ Certificate IV in Digital Media Technologies">ertificate IV in Digital and Interactive Games/ Certificate IV in Digital Media Technologies</li>
-      <li data-filtertext="Holmesglen Certificate IV in Web-Based Technologies">Certificate IV in Web-Based Technologies</li>
-      <li data-filtertext="Holmesglen Certificate IV in Web-Based Technologies/Certificate IV in Digital Media Technologies">Certificate IV in Web-Based Technologies/Certificate IV in Digital Media Technologies</li>
-      <li data-filtertext="Holmesglen Certificate III in Information, Digital Media and Technology">Certificate III in Information, Digital Media and Technology</li>
-      <li data-filtertext="Holmesglen Diploma of Information Technology">Diploma of Information Technology</li>
-      <li data-filtertext="Holmesglen Diploma of Information Technology Networking">Diploma of Information Technology Networking</li>
-      <li data-filtertext="Holmesglen Diploma of Digital Media Technologies Course">Diploma of Digital Media Technologies Course</li>
-      <li data-filtertext="Holmesglen Design Essentials Course">Design Essentials Course</li>
-      <li data-filtertext="Holmesglen Dynamic Web Development (CMS) Course">Dynamic Web Development (CMS) Course</li>
-      <li data-filtertext="Holmesglen Information Technology Degree">Information Technology Degree</li>
-      <li data-filtertext="Holmesglen Information, Digital Media and Technology for school students">Information, Digital Media and Technology for school students</li>
-      <li data-filtertext="Holmesglen Mobile Applications Course">Mobile Applications Course</li>
-      <li data-filtertext="Holmesglen Occupational Health and Safety within the IT Industry Course">Occupational Health and Safety within the IT Industry Course</li>
-      <li data-filtertext="Holmesglen Web Essentials Course">Web Essentials Course</li>
-      <a href="http://www.holmesglen.edu.au/programs/computing_and_it" data-role="button" data-inline="true">Holmesglen page</a> <a href="https://www.facebook.com/Holmesglen" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
-      <!-- external link for twitter page-->
-      <a href="https://twitter.com/holmesglen" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
-    </ul>
-  </div>
-  <div data-role="collapsible" data-filtertext="Advanced diploma of Computer Systems Technology Certificate IV in Computer Systems Technology Certificate III in Information, Digital Media & Technology">
-    <h3>Kangan Institute</h3>
-    <ul data-role="listview" data-inset="false">
-      <li data-filtertext="Kangan Institute Advanced diploma of Computer Systems Technology">Advanced diploma of Computer Systems Technology</li>
-      <li data-filtertext="Kangan Institute Certificate IV in Computer Systems Technology">Certificate IV in Computer Systems Technology</li>
-      <li data-filtertext="Kangan Institute Certificate III in Information, Digital Media & Technology">Certificate III in Information, Digital Media & Technology</li>
-      <a href="https://www.kangan.edu.au/tafe-courses/information-technology-48" data-role="button" data-inline="true">Kangan institute page</a> <a href="https://www.facebook.com/KanganInstituteFB" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
-      <!-- external link for twitter page-->
-      <a href="https://twitter.com/kanganinstitute" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
-    </ul>
-  </div>
-  <div data-role="collapsible" data-filtertext="Diploma of Information Technology (IT)">
-    <h3>Melbourne Institute of Technology</h3>
-    <ul data-role="listview" data-inset="false">
-      <li data-filtertext="Melbourne Institute of Technology Diploma of Information Technology (IT)">Diploma of Information Technology (IT)</li>
-      <a href="http://www.mit.edu.au" data-role="button" data-inline="true">Melbourne institute of technology page</a> <a href="https://www.facebook.com/MIT.Australia" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
-      <!-- external link for twitter page-->
-      <a href="https://twitter.com/melbinstuom" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
-    </ul>
-  </div>
-  <div data-role="collapsible" data-filtertext="Certificate IV in Information 
-Certificate IV in Information Technology Diploma of Information Technology Diploma of Engineering Technology Diploma of Engineering Technology - Security">
-    <h3>Melbourne Polytechnic</h3>
-    <ul data-role="listview" data-inset="false">
-      <li data-filtertext="Melbourne Polytechnic Certificate IV in Information">Certificate IV in Information</li>
-      <li data-filtertext="Melbourne Polytechnic Certificate IV in Information Technology">Certificate IV in Information Technology</li>
-      <li data-filtertext="Melbourne Polytechnic Diploma of Information Technology">Diploma of Information Technology</li>
-      <li data-filtertext="Melbourne Polytechnic Diploma of Engineering Technology">Diploma of Engineering Technology</li>
-      <li data-filtertext="Melbourne Polytechnic Diploma of Engineering Technology - Security">Diploma of Engineering Technology - Security</li>
-      <a href="http://www.melbournepolytechnic.edu.au/course-info/" data-role="button" data-inline="true">Melbourne Polytechnic page</a> <a href="https://www.facebook.com/MelbournePolytechnic" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
-      <!-- external link for twitter page-->
-      <a href="https://twitter.com/melbpoly" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
-    </ul>
-  </div>
-  <div data-role="collapsible" data-filtertext="Associate degree in engineering technology Advanced diploma of computer systems engineering Diploma of Interactive digital media Certificate IV in Information Technology Networking">
-    <h3>RMIT University</h3>
-    <ul data-role="listview" data-inset="false">
-      <li data-filtertext="RMIT University Associate degree in engineering technology">Associate degree in engineering technology</li>
-      <li data-filtertext="RMIT University Advanced diploma of computer systems engineering">Advanced diploma of computer systems engineering</li>
-      <li data-filtertext="RMIT University Diploma of Interactive digital media">Diploma of Interactive digital media</li>
-      <li data-filtertext="RMIT University Certificate IV in Information Technology Networking">Certificate IV in Information Technology Networking</li>
-      <a href="https://www.rmit.edu.au/search/program-search/?q=information+technology" data-role="button" data-inline="true">RMIT University page</a>
-      <!-- external link for facebook page-->
-      <a href="https://www.facebook.com/RMITuniversity" target="_blank"> <img src="images/facebook_icon.png" alt="RMIT University Facebook Page" width="48" height="48" align="middle"></a>
-      <!-- external link for twitter page-->
-      <a href="https://twitter.com/RMIT" target="_blank"> <img src="images/twitter-icon.png" alt="RMIT Twitter Page" width="50" height="50" align="middle"></a>
-    </ul>
-  </div>
-  <div data-role="collapsible" data-filtertext="Diploma of Website Development Diploma of Information Technology Networking Advanced Diploma of Network Security Diploma of Information Technology">
-    <h3>Victoria University</h3>
-    <ul data-role="listview" data-inset="false">
-      <li data-filtertext="Victoria University Advanced Diploma of Network Security ">Advanced Diploma of Network Security</li>
-      <li data-filtertext="Victoria University Diploma of Information Technology Networking">Diploma of Information Technology Networking </li>
-      <li data-filtertext="Victoria University Diploma of Information Technology">Diploma of Information Technology</li>
-      <li data-filtertext="Victoria University Diploma of Website Development">Diploma of Website Development</li>
-      <a href="https://www.vu.edu.au/courses" data-role="button" data-inline="true">Victoria University page</a>
-      <!-- external link for facebook page-->
-      <a href="https://www.facebook.com/victoria.university" target="_blank"> <img src="images/facebook_icon.png" alt="Victoria University Facebook Page" width="48" height="48" align="middle"></a>
-      <!-- external link for twitter page-->
-      <a href="https://twitter.com/victoriauninews" target="_blank"> <img src="images/twitter-icon.png" alt="Victoria University Twitter Page" width="50" height="50" align="middle"></a>
-    </ul>
-  </div>
+<div data-role="collapsible" data-filtertext="Certificate in Business Information Systems Diploma in Business Information Systems">
+<h3>Australian Catholic University</h3>
+<!-- external link for facebook page-->
+<ul data-role="listview" data-inset="false">
+<a href="http://www.acu.edu.au" data-role="button" data-inline="true">ACU page </a> 
+<a href="https://www.facebook.com/Australian.Catholic.University" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
+<!-- external link for twitter page-->
+<a href="http://www.twitter.com/ACUmedia" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
+<li data-filtertext="Australian Catholic University Certificate in Business Information Systems">Certificate in Business Information Systems</li>
+<li data-filtertext="Australian Catholic University Diploma in Business Information Systems">Diploma in Business Information Systems</li>
+</ul>
 </div>
-
+<div data-role="collapsible" data-filtertext="Bachelor of Information Technology - TAFE integrated program">
+<h3>Charles Sturt University</h3>
+<ul data-role="listview" data-inset="false">
+<a href="http://www.csu.edu.au/courses" data-role="button" data-inline="true">Charles Sturt page</a> 
+<a href="https://www.facebook.com/charlessturtuni" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
+<!-- external link for twitter page-->
+<a href="https://twitter.com/CharlesSturtUni?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
+<li data-filtertext="Charles Sturt University Bachelor of Information Technology - TAFE integrated program">Bachelor of Information Technology - TAFE integrated program</li>
+</ul>
+</div>
+<div data-role="collapsible" data-filtertext="Diploma of Information Technology Networking Certificate IV in Programming/ Certificate IV in Information Technology Certificate IV in Information Technology Support (Traineeship) Certificate IV in Information Technology Support / Certificate IV in Information Technology (Networking) Certificate IV in Information Technology (Networking) Certificate IV in Information Technology – Traineeship Certificate IV in Information Technology Certificate III in Information, Digital Media & Technology- Traineeship Certificate III in Information, Digital Media & Technology Certificate II in Information, Digital Media & Technology">
+<h3>Chisholm</h3>
+<ul data-role="listview" data-inset="false">
+<a href="http://www.chisholm.edu.au/courses" data-role="button" data-inline="true">Chisholm page</a> 
+<a href="https://www.facebook.com/ChisholmInstitute" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
+<!-- external link for twitter page-->
+<a href="https://twitter.com/chisholm_inst" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
+<li data-filtertext="Chisholm Diploma of Information Technology Networking">Diploma of Information Technology Networking</li>
+<li data-filtertext="Chisholm Certificate IV in Programming/ Certificate IV in Information Technology">Certificate IV in Programming/ Certificate IV in Information Technology</li>
+<li data-filtertext="Chisholm Certificate IV in Information Technology Support (Traineeship)">Certificate IV in Information Technology Support (Traineeship)</li>
+<li data-filtertext="Chisholm Certificate IV in Information Technology Support / Certificate IV in Information Technology (Networking)">Certificate IV in Information Technology Support / Certificate IV in Information Technology (Networking)</li>
+<li data-filtertext="Chisholm Certificate IV in Information Technology (Networking)">Certificate IV in Information Technology (Networking)</li>
+<li data-filtertext="Chisholm Certificate IV in Information Technology – Traineeship">Certificate IV in Information Technology – Traineeship</li>
+<li data-filtertext="Chisholm Certificate IV in Information Technology">Certificate IV in Information Technology</li>
+<li data-filtertext="Chisholm Certificate III in Information, Digital Media & Technology- Traineeship">Certificate III in Information, Digital Media & Technology- Traineeship</li>
+<li data-filtertext="Chisholm Certificate III in Information, Digital Media & Technology">Certificate III in Information, Digital Media & Technology</li>
+<li data-filtertext="Chisholm Certificate II in Information, Digital Media & Technology">Certificate II in Information, Digital Media & Technology</li>
+</ul>
+</div>
+<div data-role="collapsible" data-filtertext="Certificate IV in Information Technology Networking Diploma of Information Technology Certificate IV in Programming Certificate IV in Information Technology Support Diploma of Information Technology Networking Information Technology Degree Certificate III in Information, Digital Media and Technology Certificate IV in Digital and Interactive Games/ Certificate IV in Digital Media Technologies Certificate IV in Web-Based Technologies Certificate IV in Web-Based Technologies/Certificate IV in Digital Media Technologies Diploma of Digital Media Technologies Course Design Essentials Course Dynamic Web Development (CMS) Course Occupational Health and Safety within the IT Industry Course Mobile Applications Course Online Marketing Course Web Essentials Course Information, Digital Media and Technology for school students Information, Digital Media and Technology for school students">
+<h3>Holmesglen</h3>
+<ul data-role="listview" data-inset="false">
+<a href="http://www.holmesglen.edu.au/programs/computing_and_it" data-role="button" data-inline="true">Holmesglen page</a>
+<a href="https://www.facebook.com/Holmesglen" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
+<!-- external link for twitter page-->
+<a href="https://twitter.com/holmesglen" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
+<li data-filtertext="Holmesglen Certificate IV in Information Technology Networking">Certificate IV in Information Technology Networking</li>
+<li data-filtertext="Holmesglen Certificate IV in Programming">Certificate IV in Programming</li>
+<li data-filtertext="Holmesglen Certificate IV in Information Technology Support">Certificate IV in Information Technology Support</li>
+<li data-filtertext="Holmesglen ertificate IV in Digital and Interactive Games/ Certificate IV in Digital Media Technologies">ertificate IV in Digital and Interactive Games/ Certificate IV in Digital Media Technologies</li>
+<li data-filtertext="Holmesglen Certificate IV in Web-Based Technologies">Certificate IV in Web-Based Technologies</li>
+<li data-filtertext="Holmesglen Certificate IV in Web-Based Technologies/Certificate IV in Digital Media Technologies">Certificate IV in Web-Based Technologies/Certificate IV in Digital Media Technologies</li>
+<li data-filtertext="Holmesglen Certificate III in Information, Digital Media and Technology">Certificate III in Information, Digital Media and Technology</li>
+<li data-filtertext="Holmesglen Diploma of Information Technology">Diploma of Information Technology</li>
+<li data-filtertext="Holmesglen Diploma of Information Technology Networking">Diploma of Information Technology Networking</li>
+<li data-filtertext="Holmesglen Diploma of Digital Media Technologies Course">Diploma of Digital Media Technologies Course</li>
+<li data-filtertext="Holmesglen Design Essentials Course">Design Essentials Course</li>
+<li data-filtertext="Holmesglen Dynamic Web Development (CMS) Course">Dynamic Web Development (CMS) Course</li>
+<li data-filtertext="Holmesglen Information Technology Degree">Information Technology Degree</li>
+<li data-filtertext="Holmesglen Information, Digital Media and Technology for school students">Information, Digital Media and Technology for school students</li>
+<li data-filtertext="Holmesglen Mobile Applications Course">Mobile Applications Course</li>
+<li data-filtertext="Holmesglen Occupational Health and Safety within the IT Industry Course">Occupational Health and Safety within the IT Industry Course</li>
+<li data-filtertext="Holmesglen Web Essentials Course">Web Essentials Course</li>
+</ul>
+</div>
+<div data-role="collapsible" data-filtertext="Advanced diploma of Computer Systems Technology Certificate IV in Computer Systems Technology Certificate III in Information, Digital Media & Technology">
+<h3>Kangan Institute</h3>
+<ul data-role="listview" data-inset="false">
+<a href="https://www.kangan.edu.au/tafe-courses/information-technology-48" data-role="button" data-inline="true">Kangan institute page</a> <a href="https://www.facebook.com/KanganInstituteFB" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
+<!-- external link for twitter page-->
+<a href="https://twitter.com/kanganinstitute" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
+<li data-filtertext="Kangan Institute Advanced diploma of Computer Systems Technology">Advanced diploma of Computer Systems Technology</li>
+<li data-filtertext="Kangan Institute Certificate IV in Computer Systems Technology">Certificate IV in Computer Systems Technology</li>
+<li data-filtertext="Kangan Institute Certificate III in Information, Digital Media & Technology">Certificate III in Information, Digital Media & Technology</li>
+</ul>
+</div>
+<div data-role="collapsible" data-filtertext="Diploma of Information Technology (IT)">
+<h3>Melbourne Institute of Technology</h3>
+<a href="http://www.mit.edu.au" data-role="button" data-inline="true">Melbourne institute of technology page</a> <a href="https://www.facebook.com/MIT.Australia" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
+<!-- external link for twitter page-->
+<a href="https://twitter.com/melbinstuom" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
+<ul data-role="listview" data-inset="false">
+<li data-filtertext="Melbourne Institute of Technology Diploma of Information Technology (IT)">Diploma of Information Technology (IT)</li>
+</ul>
+</div>
+<div data-role="collapsible" data-filtertext="Certificate IV in Information
+Certificate IV in Information Technology Diploma of Information Technology Diploma of Engineering Technology Diploma of Engineering Technology - Security">
+<h3>Melbourne Polytechnic</h3>
+<ul data-role="listview" data-inset="false">
+<a href="http://www.melbournepolytechnic.edu.au/course-info/" data-role="button" data-inline="true">Melbourne Polytechnic page</a> 
+<a href="https://www.facebook.com/MelbournePolytechnic" target="_blank"> <img src="images/facebook_icon.png" alt="ACU Facebook Page" width="48" height="48" align="middle"></a>
+<!-- external link for twitter page-->
+<a href="https://twitter.com/melbpoly" target="_blank"> <img src="images/twitter-icon.png" alt="ACU Twitter Page" width="50" height="50" align="middle"></a>
+<li data-filtertext="Melbourne Polytechnic Certificate IV in Information">Certificate IV in Information</li>
+<li data-filtertext="Melbourne Polytechnic Certificate IV in Information Technology">Certificate IV in Information Technology</li>
+<li data-filtertext="Melbourne Polytechnic Diploma of Information Technology">Diploma of Information Technology</li>
+<li data-filtertext="Melbourne Polytechnic Diploma of Engineering Technology">Diploma of Engineering Technology</li>
+<li data-filtertext="Melbourne Polytechnic Diploma of Engineering Technology - Security">Diploma of Engineering Technology - Security</li>
+</ul>
+</div>
+<div data-role="collapsible" data-filtertext="Associate degree in engineering technology Advanced diploma of computer systems engineering Diploma of Interactive digital media Certificate IV in Information Technology Networking">
+<h3>RMIT University</h3>
+<ul data-role="listview" data-inset="false">
+<a href="https://www.rmit.edu.au/search/program-search/?q=information+technology" data-role="button" data-inline="true">RMIT University page</a>
+<!-- external link for facebook page-->
+<a href="https://www.facebook.com/RMITuniversity" target="_blank"> <img src="images/facebook_icon.png" alt="RMIT University Facebook Page" width="48" height="48" align="middle"></a>
+<!-- external link for twitter page-->
+<a href="https://twitter.com/RMIT" target="_blank"> <img src="images/twitter-icon.png" alt="RMIT Twitter Page" width="50" height="50" align="middle"></a>
+<li data-filtertext="RMIT University Associate degree in engineering technology">Associate degree in engineering technology</li>
+<li data-filtertext="RMIT University Advanced diploma of computer systems engineering">Advanced diploma of computer systems engineering</li>
+<li data-filtertext="RMIT University Diploma of Interactive digital media">Diploma of Interactive digital media</li>
+<li data-filtertext="RMIT University Certificate IV in Information Technology Networking">Certificate IV in Information Technology Networking</li>
+</ul>
+</div>
+<div data-role="collapsible" data-filtertext="Diploma of Website Development Diploma of Information Technology Networking Advanced Diploma of Network Security Diploma of Information Technology">
+<h3>Victoria University</h3>
+<ul data-role="listview" data-inset="false">
+<a href="https://www.vu.edu.au/courses" data-role="button" data-inline="true">Victoria University page</a>
+<!-- external link for facebook page-->
+<a href="https://www.facebook.com/victoria.university" target="_blank"> <img src="images/facebook_icon.png" alt="Victoria University Facebook Page" width="48" height="48" align="middle"></a>
+<!-- external link for twitter page-->
+<a href="https://twitter.com/victoriauninews" target="_blank"> <img src="images/twitter-icon.png" alt="Victoria University Twitter Page" width="50" height="50" align="middle"></a>
+<li data-filtertext="Victoria University Advanced Diploma of Network Security ">Advanced Diploma of Network Security</li>
+<li data-filtertext="Victoria University Diploma of Information Technology Networking">Diploma of Information Technology Networking </li>
+<li data-filtertext="Victoria University Diploma of Information Technology">Diploma of Information Technology</li>
+<li data-filtertext="Victoria University Diploma of Website Development">Diploma of Website Development</li>
+</ul>
+</div>
+</div>
 <!-- display footer -->
 <div data-role="footer">
-  <h2>&copy; Uni2Go 2015</h2>
+<h2>&copy; Uni2Go 2015</h2>
 </div>
