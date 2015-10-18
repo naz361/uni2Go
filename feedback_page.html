@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Uni2Go-Feedback</title>
+<title>Uni2Go - Feedback</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="themes/theme.css" />
 <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var operation = "ADD"; //"ADD"=Adding the user
+
+	var selected_index = -1; //Index of the selected list item
+
+	var usersTable = localStorage.getItem("usersTable");//Retrieve the stored data
+
+	usersTable = JSON.parse(usersTable); //Converts string to object
+
+	if(usersTable == null) //If there is no data, initialize an empty array
+		usersTable = [];
+
+	//To add the user
+	function Add(){
+		var user = JSON.stringify({
+			Name  : $("#name").val(),
+			Rate  : $("#rate").val(),
+			Comments : $("#comments").val()
+		});
+		usersTable.push(user);
+		localStorage.setItem("usersTable", JSON.stringify(usersTable));
+		alert("Thanks for leaving your feedback!");
+		return true;
+	}
+	
+	function List(){		
+		$("#tblList").html("");
+		$("#tblList").html(
+			"<thead>"+
+			"	<tr>"+
+			"	<th>Our Users Feedbacks</th>"+		
+			"	</tr>"+
+			"</thead>"+
+			"<tbody>"+
+			"</tbody>"
+			);
+		for(var i in usersTable){
+			var usr = JSON.parse(usersTable[i]);
+		  	$("#tblList tbody").append("<tr>"+										
+										  "	<td>"+usr.Name+' has given us '+usr.Rate+' rate and said : '+usr.Comments+"</td>" + 
+										"</tr>");
+		}
+	}
+
+	$("#feedbackForm").bind("submit",function(){		
+		if(operation == "ADD")
+			return Add();
+	});
+
+	List();
+});
+	
+</script>
+<script type="text/javascript">
+/*
+The validation part has been commented because we cant make this validation work in the last time and Mona was responsible for this. 
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+*/
+    }
+}
+</script>
 </head>
 
 <body>
@@ -37,25 +103,18 @@
     </center>
     
     <!-- display feedback form with placeholders so customers know what to put in -->
-    <form>
+    <form id="feedbackForm">
       <label for="name">Full Name:</label>
       <textarea name="name" id="name" placeholder="Please tell us your name."></textarea>
       <label for="rate">Rate our App</label>
-      <input type="range" min="1" max="10" />
+      <input type="range" min="1" max="10" id="rate" />
       <label for="comments">Comments:</label>
       <textarea name="comments" id="comments" placeholder="Tell us what you think."></textarea>
-      <div data-role="main" class="ui-content">
-      <center>
-        <a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Submit</a>
-      </center>
-      <div data-role="popup" id="myPopupDialog">
-      <div data-role="header">
-        <h1>Feedback</h1>
-      </div>
-      <div data-role="main" class="ui-content">
-        <h2>Thanks for leaving feedback!</h2>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-delete ui-btn-icon-left" data-rel=       "back">Close</a> </div>
+      <input type="submit" value="Submit" />
+	  <h4>To see your comment, after submit please simply <strong>refresh</strong> the page.</h4>
     </form>
+  	<table id="tblList">
+  	</table>
   </div>
   <!-- display footer -->
   <div data-role="footer">
