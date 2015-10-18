@@ -10,7 +10,7 @@
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	var operation = "ADD"; //"ADD"=Adding the user
+	var operation = "ADD"; //Function to add a the user
 
 	var selected_index = -1; //Index of the selected list item
 
@@ -30,10 +30,11 @@ $(function(){
 		});
 		usersTable.push(user);
 		localStorage.setItem("usersTable", JSON.stringify(usersTable));
+		//generating the thanks alert box once the form submitted
 		alert("Thanks for leaving your feedback!");
 		return true;
 	}
-	
+	//To bring up the users table list
 	function List(){		
 		$("#tblList").html("");
 		$("#tblList").html(
@@ -52,7 +53,7 @@ $(function(){
 										"</tr>");
 		}
 	}
-
+	//Calling the function once the submit button in feedbackForm pressed
 	$("#feedbackForm").bind("submit",function(){		
 		if(operation == "ADD")
 			return Add();
@@ -61,18 +62,6 @@ $(function(){
 	List();
 });
 	
-</script>
-<script type="text/javascript">
-/*
-The validation part has been commented because we cant make this validation work in the last time and Mona was responsible for this. 
-function validateForm() {
-    var x = document.forms["myForm"]["fname"].value;
-    if (x == null || x == "") {
-        alert("Name must be filled out");
-        return false;
-*/
-    }
-}
 </script>
 </head>
 
@@ -113,6 +102,7 @@ function validateForm() {
       <input type="submit" value="Submit" />
 	  <h4>To see your comment, after submit please simply <strong>refresh</strong> the page.</h4>
     </form>
+	<!--Place that the users table (list of users and their feedbacks etc) will be genertated-->
   	<table id="tblList">
   	</table>
   </div>
@@ -123,3 +113,5 @@ function validateForm() {
 </div>
 </body>
 </html>
+<!-- refrences used to build this solution:
+http://mrbool.com , http://w3schools.com , all accessed between 13th - 17th October 2015 -->
